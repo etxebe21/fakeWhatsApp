@@ -2,31 +2,24 @@ import React, {Component} from "react";
 import { StyleSheet, View } from "react-native";
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Text } from 'react-native';
-import ScrollableTabView from 'react-native-scrollable-tab-view';
-import { ViewPropTypes } from 'deprecated-react-native-prop-types';
-//import { View } from 'deprecated-react-native-prop-types';
-//import Chats from './app/components/Chat';
-//import States from './app/components/State';
-//import Calls from './app/components/Call';
+import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import Chat from './components/Chat';
+import State from "./components/State";
+import Call from "./components/Call";
+
+
+const Tab = createMaterialTopTabNavigator();
 
 export default class App extends Component {
     render() {
         return(
           
+          
             <View style= {styles.mainContainer}>
 
               <View style= {styles.headerContainer}>
-                {/* <ScrollableTabView
-                  tabBarUnderlineIcon = "#fff"
-                  tabBarUnderlineStyle = {{backgroundColor: "#fff"}}
-                  tabBarActiveTextColor = "#fff"
-                  tabBarInactiveTextColor = "#ddd"
-                  tabBarBackgroundColor = "#075e54"
-                  >
-                    <Chats tabLabel = "CHATS" />
-                    <States tabLabel = "ESTADOS" />
-                    <Calls tabLabel = "LLAMADAS" />
-                  </ScrollableTabView> */}
+              
                 <View style= {styles.leftHeaderContainer}>
 
                   <Text style={styles.logo}>WhatsApp</Text>
@@ -36,13 +29,25 @@ export default class App extends Component {
                     <Icon name = "search" color= "#fff" size={23} style={styles.icon} />
                     <Icon name = "more-vert" color= "#fff" size={23} style={styles.icon} />
 
-                </View>
+                  </View>
                 
               </View>
               <View style = {styles.contentContainer}>
+                  <NavigationContainer>
                   
+                    <Tab.Navigator>
+
+                      <Tab.Screen name="CHATS" component={Chat} /> 
+                      <Tab.Screen name="ESTADOS" component={State} />
+                      <Tab.Screen name="LLAMADAS" component={Call} />
+
+                  </Tab.Navigator>
+                  
+                  </NavigationContainer>
+
                 </View>
             </View>
+            
         )
     }
 }
