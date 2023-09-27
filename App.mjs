@@ -3,17 +3,20 @@ import { StyleSheet, View } from "react-native";
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Text } from 'react-native';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
-import Chats from './app/components/Chat';
-import States from './app/components/State';
-import Calls from './app/components/Call';
+import { ViewPropTypes } from 'deprecated-react-native-prop-types';
+//import { View } from 'deprecated-react-native-prop-types';
+//import Chats from './app/components/Chat';
+//import States from './app/components/State';
+//import Calls from './app/components/Call';
 
 export default class App extends Component {
     render() {
         return(
           
             <View style= {styles.mainContainer}>
+
               <View style= {styles.headerContainer}>
-                <ScrollableTabView
+                {/* <ScrollableTabView
                   tabBarUnderlineIcon = "#fff"
                   tabBarUnderlineStyle = {{backgroundColor: "#fff"}}
                   tabBarActiveTextColor = "#fff"
@@ -23,16 +26,22 @@ export default class App extends Component {
                     <Chats tabLabel = "CHATS" />
                     <States tabLabel = "ESTADOS" />
                     <Calls tabLabel = "LLAMADAS" />
-                  </ScrollableTabView>
+                  </ScrollableTabView> */}
                 <View style= {styles.leftHeaderContainer}>
+
                   <Text style={styles.logo}>WhatsApp</Text>
                 </View>
                   <View style= {styles.rightHeaderContainer}>
+
                     <Icon name = "search" color= "#fff" size={23} style={styles.icon} />
                     <Icon name = "more-vert" color= "#fff" size={23} style={styles.icon} />
 
                 </View>
+                
               </View>
+              <View style = {styles.contentContainer}>
+                  
+                </View>
             </View>
         )
     }
@@ -71,6 +80,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     padding: 5,
+    
   }
 
 });
