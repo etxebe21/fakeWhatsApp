@@ -6,7 +6,7 @@ export default class Call extends Component{
 
     render() {
         return (
-            <View><Text>States</Text></View>
+            <View><Text>Calls</Text></View>
         );
     }
 }
