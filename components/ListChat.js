@@ -6,7 +6,6 @@ export default class ListChat extends Component {
     render() {
         return (
 
-            // <View><Text>ListChats</Text></View>
             <View style = {styles.listItemContainer}>
                 <View style = {styles.avatarContainer}>
                     <Image 

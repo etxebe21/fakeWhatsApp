@@ -1,13 +1,11 @@
 import React, {Component} from "react";
-import { View, Text, FlatList, ActivityIndicator } from "react-native";
+import {FlatList, ActivityIndicator } from "react-native";
 import axios from 'axios';
 import { FAKE_CHATS } from "../data/data";
 import ListChat from "./ListChat";
 
 
 export default class Chat extends Component{
-
-   
 
     constructor(props) {
         super(props)
@@ -20,7 +18,7 @@ export default class Chat extends Component{
     componentDidMount() {
         axios.get(FAKE_CHATS)
         .then((response) => {
-            console.log(response);
+            //console.log(response);
             this.setState({
                 chatList: response.data,
                 loaded: true

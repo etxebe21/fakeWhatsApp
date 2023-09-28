@@ -1,19 +1,28 @@
 import React, {Component} from 'react';
 import { StyleSheet, View, Text, Image } from "react-native";
 
-
 export default class ListState extends Component {
+   
+    
+      renderStateHeader() {
+        
+          return (
+            <View style={styles.stateContainer}>
+              <Text style={styles.stateText}>Mi estado</Text>
+            </View>
+          );
+        }
+        
     render() {
         return (
 
-            // <View><Text>ListChats</Text></View>
             <View style = {styles.listItemContainer}>
                 <View style = {styles.avatarContainer}>
                     <Image 
                         style = {styles.avatar}
                         source = {{uri: this.props.image}}
                         />
-            </View>
+                </View>
 
             <View style = {styles.chatDetailsContainer}>
                 <View style = {styles.chatDetailsContainerWrap}>
@@ -36,8 +45,20 @@ const styles = StyleSheet.create ({
     listItemContainer: {
         flex: 1,
         flexDirection: "row",
-        padding: 10
+        padding: 10,
+        position: 'relative',
     },
+    stateContainer: {
+        position: 'absolute',
+        zIndex: 1,
+        padding: 5,
+        backgroundColor: 'rgba(255, 255, 255, 0.8)', // Ajusta el color de fondo según tus preferencias
+        width: '100%', // Asegura que ocupe todo el ancho
+      },
+      stateText: {
+        fontWeight: 'bold',
+        fontSize: 16,
+      },
     avatarContainer: {
         flex: 1,
         alignItems: "flex-start"

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { View, Text, ActivityIndicator, FlatList } from "react-native";
+import { ActivityIndicator, FlatList } from "react-native";
 import { FAKE_STATES } from "../data/data";
 import axios from 'axios';
 import ListState from "./ListState";

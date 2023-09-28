@@ -4,4 +4,3 @@ export const FAKE_CHATS = 'https://gist.githubusercontent.com/vocoder12/85508236
 
 export const FAKE_STATES = 'https://gist.githubusercontent.com/vocoder12/10530f68f2bc29ac1a29e76307a9c2aa/raw/ea68f8222be751bb3ea2ac8c9b171b2ece6586a6/fake_states.json';
 
-//export const FAKE_CHATS = "first_name";
