@@ -1,7 +1,6 @@
 import React, {Component} from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, TextBase } from "react-native";
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Chat from './components/Chat';
