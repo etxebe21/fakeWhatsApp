@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import { View, Text, ActivityIndicator } from "react-native";
+import { View, Text, ActivityIndicator , FlatList} from "react-native";
 import { FAKE_CALLS } from "../data/data";
 import ListCall from "./ListCall";
+import axios from 'axios';
 
 
 export default class Call extends Component{
@@ -15,11 +16,11 @@ export default class Call extends Component{
                 }
             }
         
-            componentDimount() {
+            componentDidMount() {
                 axios.get(FAKE_CALLS)
                 .then((response) => {
                     this.setState({
-                        ccallList: response.data,
+                        callList: response.data,
                         loaded: true
                     })
                 })

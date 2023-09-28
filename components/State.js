@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import { View, Text, ActivityIndicator } from "react-native";
+import { View, Text, ActivityIndicator, FlatList } from "react-native";
 import { FAKE_STATES } from "../data/data";
-
+import axios from 'axios';
+import ListState from "./ListState";
 
 export default class State extends Component{
 
@@ -13,7 +14,7 @@ export default class State extends Component{
         }
     }
 
-    componentDimount() {
+    componentDidMount() {
         axios.get(FAKE_STATES)
         .then((response) => {
             this.setState({

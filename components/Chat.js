@@ -21,7 +21,7 @@ export default class Chat extends Component{
         }
     }
 
-    componentDimount() {
+    componentDidMount() {
         axios.get(FAKE_CHATS)
         .then((response) => {
             console.log(response);
