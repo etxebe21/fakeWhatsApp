@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { View, Text } from "react-native";
+import { View, Text, ActivityIndicator } from "react-native";
 import { FAKE_STATES } from "../data/data";
 
 
@@ -32,7 +32,7 @@ export default class State extends Component{
                 <FlatList
                     data = {this.state.stateList}
                     renderItem ={({item})=> (
-                        <ListChat 
+                        <ListState
                             first_name= {item.first_name}
                             image = {item.image}
                             date = {item.date}

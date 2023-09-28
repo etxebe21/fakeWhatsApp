@@ -1,6 +1,7 @@
 import React, {Component} from "react";
-import { View, Text } from "react-native";
+import { View, Text, ActivityIndicator } from "react-native";
 import { FAKE_CALLS } from "../data/data";
+import ListCall from "./ListCall";
 
 
 export default class Call extends Component{
@@ -33,7 +34,7 @@ export default class Call extends Component{
                         <FlatList
                             data = {this.state.callList}
                             renderItem ={({item})=> (
-                                <ListChat 
+                                <ListCall
                                     first_name= {item.first_name}
                                     missed = {item.missed}
                                     image = {item.image}

@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import { View, Text, FlatList, ActivityIndicator } from "react-native";
 import axios from 'axios';
 import { FAKE_CHATS } from "../data/data";
-import ListChat from "./components/ListChat";
+import ListChat from "./ListChat";
 
 
 export default class Chat extends Component{
@@ -34,6 +34,15 @@ export default class Chat extends Component{
             console.log(error);
         });
     }
+//     fetch(FAKE_CHATS)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       this.setState({ chatList: data });
+//     })
+//     .catch((error) => {
+//       console.error("Error fetching chats data: ", error);
+//     });
+// }
 
     render() {
         if(this.state.loaded) {
@@ -59,5 +68,13 @@ export default class Chat extends Component{
             )
         }
     }
+// return(    
+// <View>
+
+//     <Text>Fake Chats Data:</Text>
+//     <Text>{JSON.stringify(this.state.chatList)}</Text>
     
+//   </View>
+// );
+// }
 }
