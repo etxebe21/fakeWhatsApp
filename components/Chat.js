@@ -7,11 +7,7 @@ import ListChat from "./ListChat";
 
 export default class Chat extends Component{
 
-    // render() {
-    //     return (
-    // //         <View><Text>Chats</Text></View>
-    // //     );
-    
+   
 
     constructor(props) {
         super(props)
@@ -34,15 +30,6 @@ export default class Chat extends Component{
             console.log(error);
         });
     }
-//     fetch(FAKE_CHATS)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       this.setState({ chatList: data });
-//     })
-//     .catch((error) => {
-//       console.error("Error fetching chats data: ", error);
-//     });
-// }
 
     render() {
         if(this.state.loaded) {
@@ -68,13 +55,4 @@ export default class Chat extends Component{
             )
         }
     }
-// return(    
-// <View>
-
-//     <Text>Fake Chats Data:</Text>
-//     <Text>{JSON.stringify(this.state.chatList)}</Text>
-    
-//   </View>
-// );
-// }
 }

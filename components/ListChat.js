@@ -26,7 +26,7 @@ export default class ListChat extends Component {
                     </View>
                 <View style = {styles.chatDetailsContainerWrap}>
                     <View style = {styles.msgContainer}>
-                        <Text style = {styles.msgText}></Text>
+                        <Text style = {styles.msgText}>{this.props.message}</Text>
                     </View>
                 </View>
                 </View>
@@ -77,6 +77,11 @@ const styles = StyleSheet.create ({
     },
     dateText: {
         fontSize: 12
+    },
+    msgText: {
+        
+        color: "#000"
+        
     },
     avatar: {
         borderRadius: 30,
