@@ -15,25 +15,19 @@ export default class ListState extends Component {
                         />
             </View>
 
-                <View style = {styles.chatDetailsContainer}>
-                    <View style = {styles.chatDetailsContainerWrap}>
-                        <View style = {styles.nameContainer}>
+            <View style = {styles.chatDetailsContainer}>
+                <View style = {styles.chatDetailsContainerWrap}>
+                    <View style = {styles.nameContainer}>
                             <Text style = {styles.nameText}>{this.props.first_name}</Text>
-                        </View>
-                        <View style = {styles.dateContainer}>
-                            <Text style = {styles.dateText}>{this.props.date}{this.props.time}</Text>
                         </View>
                     </View>
                 <View style = {styles.chatDetailsContainerWrap}>
-                    <View style = {styles.missedContainer}>
-                        <Text style = {styles.missedText}></Text>
+                    <View style = {styles.dateContainer}>
+                            <Text style = {styles.dateText}>{this.props.date}    {this.props.time}</Text>
                     </View>
                 </View>
                 </View>
-            </View>
-
-
-            
+            </View>          
         );
     }
 }
@@ -59,21 +53,14 @@ const styles = StyleSheet.create ({
         padding: 5
     },
     nameContainer: {
-        alignItems: "flex-start",
-        flex: 1
+        flex: 1,   
     },
     dateContainer: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "flex-end"
-    },
-    msgContainer: {
-        flex:1
+        justifyContent: "flex-start",
     },
     nameText: {
         fontWeight: "bold",
         color: "#000"
-
     },
     dateText: {
         fontSize: 12

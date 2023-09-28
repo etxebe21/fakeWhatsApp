@@ -21,7 +21,7 @@ export default class ListChat extends Component {
                             <Text style = {styles.nameText}>{this.props.first_name}</Text>
                         </View>
                         <View style = {styles.dateContainer}>
-                            <Text style = {styles.dateText}>{this.props.date}{this.props.time}</Text>
+                            <Text style = {styles.dateText}>{this.props.date}   {this.props.time}</Text>
                         </View>
                     </View>
                 <View style = {styles.chatDetailsContainerWrap}>
