@@ -32,5 +32,22 @@ export default class Chat extends Component{
             console.log(error);
         });
     }
+
+    render() {
+        if(this.state.loaded) {
+            return(
+                <FlatList
+                    data = {this.state.chatList}
+                    renderItem ={({item})=> <Text>{item.first_name}</Text>}
+                    keyExtractor = {item => item.id}
+                    />
+            )
+        } else {
+            return(
+                <ActivityIndicator size = "Large" />
+            )
+        }
+    }
     
 }
+

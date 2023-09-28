@@ -42,7 +42,7 @@ export default class App extends Component {
                       <Tab.Screen name="LLAMADAS" component={Call} />
 
                   </Tab.Navigator>
-                  
+
                   </NavigationContainer>
 
                 </View>
