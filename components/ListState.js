@@ -4,18 +4,18 @@ import { StyleSheet, View, Text, Image } from "react-native";
 export default class ListState extends Component {
    
     
-      renderStateHeader() {
+    //   renderStateHeader() {
         
-          return (
-            <View style={styles.stateContainer}>
-              <Text style={styles.stateText}>Mi estado</Text>
-            </View>
-          );
-        }
+    //       return (
+    //         <View style={styles.stateContainer}>
+    //           <Text style={styles.stateText}>Mi estado</Text>
+    //         </View>
+    //       );
+    //     }
         
     render() {
         return (
-
+            
             <View style = {styles.listItemContainer}>
                 <View style = {styles.avatarContainer}>
                     <Image 
@@ -52,8 +52,8 @@ const styles = StyleSheet.create ({
         position: 'absolute',
         zIndex: 1,
         padding: 5,
-        backgroundColor: 'rgba(255, 255, 255, 0.8)', // Ajusta el color de fondo según tus preferencias
-        width: '100%', // Asegura que ocupe todo el ancho
+        backgroundColor: 'rgba(255, 255, 255, 0.8)', 
+        width: '100%', 
       },
       stateText: {
         fontWeight: 'bold',

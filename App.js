@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import { StyleSheet, View, Text } from "react-native";
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import ActionButton from 'react-native-action-button';
+import { useNavigation } from '@react-navigation/native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Chat from './components/Chat';
@@ -9,6 +11,12 @@ import Call from "./components/Call";
 
 
 const Tab = createMaterialTopTabNavigator();
+
+const ChangeTab = (tabName) => {
+  const navigation = useNavigation();
+
+  navigation.navigate(tabName);
+};
 
 export default class App extends Component {
     render() {
@@ -45,6 +53,31 @@ export default class App extends Component {
                   </NavigationContainer>
 
                 </View>
+
+                <ActionButton buttonColor="rgba(231,76,60,1)">
+          <ActionButton.Item
+            buttonColor="#3498db"
+            title="Chats"
+            onPress={() => ChangeTab('CHATS')}
+          >
+            <Icon name="chatbubbles" style={styles.actionButtonIcon} />
+          </ActionButton.Item>
+          <ActionButton.Item
+            buttonColor="#1abc9c"
+            title="Estados"
+            onPress={() => ChangeTab('ESTADOS')}
+          >
+            <Icon name="checkmark-circle" style={styles.actionButtonIcon} />
+          </ActionButton.Item>
+          <ActionButton.Item
+            buttonColor="#9b59b6"
+            title="Llamadas"
+            onPress={() => ChangeTab('LLAMADAS')}
+          >
+            <Icon name="call" style={styles.actionButtonIcon} />
+          </ActionButton.Item>
+        </ActionButton>
+
             </View>
             
         )
@@ -85,6 +118,11 @@ const styles = StyleSheet.create({
   icon: {
     padding: 5,
     
+  },
+  actionButtonIcon: {
+    fontSize: 20,
+    height: 22,
+    color: 'white',
   }
 
 });
