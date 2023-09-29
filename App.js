@@ -8,15 +8,23 @@ import Chat from './components/Chat';
 import State from "./components/State";
 import Call from "./components/Call";
 
-
 const Tab = createMaterialTopTabNavigator();
 
-
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        listType: Chat 
+    };
+}
+
+setListType(type) {
+    this.setState({ listType: type });
+}
     render() {
+    
         return(
-          
-          
+            
             <View style= {styles.mainContainer}>
 
               <View style= {styles.headerContainer }>
@@ -35,32 +43,61 @@ export default class App extends Component {
               </View>
               <View style = {styles.contentContainer}>
                   <NavigationContainer>
-                  
                     <Tab.Navigator
                       tabBarOptions={{
                       style: { backgroundColor: 'rgba(7, 94 ,84) '}, 
                       labelStyle: { color: 'rgb(255,255,255) ' }, 
-                      indicatorStyle: {color: "#ffffff",}
+                      tabBarIndicatorStyle: {backgroundColor: "#ffffff",}
                     }}>
-
-                      <Tab.Screen name="CHATS" component={Chat} /> 
-                      <Tab.Screen name="ESTADOS" component={State} />
-                      <Tab.Screen name="LLAMADAS" component={Call} />
-
-                  </Tab.Navigator>
-
+                      <Tab.Screen
+                        name="CHATS"
+                        component={Chat}
+                        listeners={{
+                            tabPress: (e) => {
+                                this.setListType(Chat);
+                            }
+                        }}
+                      />
+                      <Tab.Screen
+                          name="ESTADOS"
+                          component={State}
+                          listeners={{
+                              tabPress: (e) => {
+                                  this.setListType(State);
+                              }
+                          }}
+                      />
+                      <Tab.Screen
+                          name="LLAMADAS"
+                          component={Call}
+                          listeners={{
+                              tabPress: (e) => {
+                                  this.setListType(Call);
+                              }
+                          }}
+                      />
+                    </Tab.Navigator>
                   </NavigationContainer>
-
                 </View>
 
-                <ActionButton buttonColor="green" hideShadow={true} useNativeFeedback={false}></ActionButton>
-
-            </View>
-            
+                <ActionButton
+                   buttonColor= '#25D366' 
+                    hideShadow={true}
+                    useNativeFeedback={false}
+                    icon={(() => {
+                        if (this.state.listType === Chat) {
+                            return <Icon name='message' size={20} color='white' />;
+                        } else if (this.state.listType === Call) {
+                            return <Icon name='call' size={20} color='white' />;
+                        } else {
+                            return <Icon name='camera-alt' size={20} color='white' />;
+                        }
+                    })()}
+                    style={styles.actionButtonIcon}/>
+            </View>           
         )
     }
 }
-
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -79,7 +116,6 @@ const styles = StyleSheet.create({
     flex: 8,
     backgroundColor: "#075e54",
     color: "#ffffff",
-    indicatorStyle:"#ffffff",
   },
   rightHeaderContainer: {
     flexDirection: "row",
@@ -100,9 +136,9 @@ const styles = StyleSheet.create({
     
   },
   actionButtonIcon: {
-    fontSize: 20,
-    height: 22,
-    color: 'white',
+    position: 'absolute',
+    bottom: 20,
+    right: 20,
   }
 
 });

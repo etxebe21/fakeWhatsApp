@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import { StyleSheet, View, Text, Image } from "react-native";
 
-
 export default class ListChat extends Component {
     render() {
         return (
 
-            <View style = {styles.listItemContainer}>
+        <View style = {styles.listItemContainer}>
                 <View style = {styles.avatarContainer}>
                     <Image 
                         style = {styles.avatar}
@@ -14,7 +13,7 @@ export default class ListChat extends Component {
                         />
             </View>
 
-                <View style = {styles.chatDetailsContainer}>
+            <View style = {styles.chatDetailsContainer}>
                     <View style = {styles.chatDetailsContainerWrap}>
                         <View style = {styles.nameContainer}>
                             <Text style = {styles.nameText}>{this.props.first_name}</Text>
@@ -29,12 +28,7 @@ export default class ListChat extends Component {
                     </View>
                 </View>
                 </View>
-               
-            </View>
-            
-
-
-            
+        </View>      
         );
     }
 }
@@ -88,6 +82,11 @@ const styles = StyleSheet.create ({
         borderRadius: 30,
         width: 60,
         height: 60
-    }
+    },
+    actionButton: {
+        position: 'absolute',
+        bottom: 20,
+        right: 20,
+    },
 
 });
