@@ -42,7 +42,11 @@ export default class App extends Component {
               <View style = {styles.contentContainer}>
                   <NavigationContainer>
                   
-                    <Tab.Navigator>
+                    <Tab.Navigator
+                      tabBarOptions={{
+                      style: { backgroundColor: 'rgba(7 94 84) '}, 
+                      labelStyle: { color: 'rgb(255,255,255) ' }, 
+                    }}>
 
                       <Tab.Screen name="CHATS" component={Chat} /> 
                       <Tab.Screen name="ESTADOS" component={State} />
@@ -54,7 +58,7 @@ export default class App extends Component {
 
                 </View>
 
-                <ActionButton buttonColor="rgba(231,76,60,1)">
+                <ActionButton buttonColor="green">
           <ActionButton.Item
             buttonColor="#3498db"
             title="Chats"
@@ -99,7 +103,9 @@ const styles = StyleSheet.create({
       alignITems: "center"
   },
   contentContainer: {
-    flex: 8
+    flex: 8,
+    backgroundColor: "#075e54",
+    color: "#ffffff",
   },
   rightHeaderContainer: {
     flexDirection: "row",
