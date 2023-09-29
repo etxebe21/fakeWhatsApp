@@ -29,7 +29,9 @@ export default class ListChat extends Component {
                     </View>
                 </View>
                 </View>
+               
             </View>
+            
 
 
             

@@ -49,6 +49,7 @@ export default class ListCall extends Component {
                 </View>
             </View>
     </View>
+    
 </View>
         );
     }
