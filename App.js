@@ -25,7 +25,7 @@ export default class App extends Component {
           
             <View style= {styles.mainContainer}>
 
-              <View style= {styles.headerContainer}>
+              <View style= {styles.headerContainer }>
               
                 <View style= {styles.leftHeaderContainer}>
 
@@ -109,11 +109,11 @@ const styles = StyleSheet.create({
   },
   rightHeaderContainer: {
     flexDirection: "row",
-    alignItems: "flex-end"
+    alignItems: "center"
   },
   leftHeaderContainer: {
     flexDirection: "row",
-    alignItems: "flex-start"
+    alignItems: "center"
   },
   logo: {
     color: "#ffffff",
