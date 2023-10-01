@@ -38,9 +38,9 @@ export default class ListCall extends Component {
             <View style={styles.chatDetailsContainerWrap}>
                 <View style={styles.missedContainer}>
                     {missed ? (
-                        <Icon name="phone-missed" size={15} color="red" /> 
+                        <Icon name="call-missed" size={15} color="red" /> 
                     ) : (
-                        <Icon name="phone" size={15} color="green" /> 
+                        <Icon name="call-received" size={15} color="green" /> 
                     )}
                 
                     <Text style={styles.dateText}  marginLeft= {6}>

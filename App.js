@@ -36,6 +36,7 @@ setListType(type) {
                   <View style= {styles.rightHeaderContainer}>
 
                     <Icon name = "search" color= "#fff" size={23} style={styles.icon} />
+                    <Icon name = "camera-alt" color= "#fff" size={23} style={styles.icon} />
                     <Icon name = "more-vert" color= "#fff" size={23} style={styles.icon} />
 
                   </View>
