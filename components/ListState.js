@@ -5,9 +5,10 @@ export default class ListState extends Component {
         
     render() {
         const recentState = this.props.first_name === 'Recientes';
+        const myState = this.props.date === 'añade actualización';
         return (
             
-            <View style = {[styles.listItemContainer, recentState ? styles.recentContainer : null]}>
+            <View style = {[styles.listItemContainer,myState ? styles.myStateContainer : null, recentState ? styles.recentContainer : null]}>
                 <View style = {styles.avatarContainer}>
                     <Image 
                         style = {styles.avatar}
@@ -15,9 +16,9 @@ export default class ListState extends Component {
                         />
                 </View>
 
-            <View style = {styles.chatDetailsContainer}>
-                <View style = {[styles.chatDetailsContainerWrap, recentState ? styles.recentContainer : null]}>
-                    <View style = {styles.nameContainer}>
+            <View style = {[styles.chatDetailsContainer,myState ? styles.myStateContainer : null]}>
+                <View style = {[styles.chatDetailsContainerWrap,myState ? styles.myStateContainer : null, recentState ? styles.recentContainer : null]}>
+                    <View style = {[styles.nameContainer, recentState ? styles.recentContainer : null]}>
                     <Text style={[styles.nameText, recentState ? styles.recentWord : null]}>
                                 {this.props.first_name}
                             </Text>
@@ -87,10 +88,19 @@ const styles = StyleSheet.create ({
     recentContainer: {
         backgroundColor: '#fdf5e6', 
         width: '100%', 
-        padding: 10, 
-        height: 20,
-        borderBottomColor: '#fdf5e6', 
-        borderBottomWidth: 10
+        padding: 1, 
+        height: 30,
+        borderTopWi: 0.2
+       
     },
+    recentWord: {
+        fontWeight: "bold",
+        color:"#075e54",
+
+    },
+    myStateContainer: {
+        borderBottomColor: "rgba(92,94,94,0.5)",
+        borderBottomWidth: 0
+    }
   
 });
