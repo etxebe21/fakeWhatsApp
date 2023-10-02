@@ -45,10 +45,10 @@ setListType(type) {
               <View style = {styles.contentContainer}>
                   <NavigationContainer>
                     <Tab.Navigator
-                      tabBarOptions={{
-                      style: { backgroundColor: 'rgba(7, 94 ,84) '}, 
-                      labelStyle: { color: 'rgb(255,255,255) ' }, 
-                      tabBarIndicatorStyle: {backgroundColor: "#ffffff",}
+                      screenOptions={{
+                        tabBarStyle: { backgroundColor:"rgb(7, 94 ,84) "}, 
+                        tabBarLabelStyle: { color: 'rgb(255,255,255) ' }, 
+                        tabBarIndicatorStyle: {backgroundColor: "#ffffff",}
                     }}>
                       <Tab.Screen
                         name="CHATS"
@@ -89,7 +89,7 @@ setListType(type) {
                         if (this.state.listType === Chat) {
                             return <Icon name='message' size={20} color='white' />;
                         } else if (this.state.listType === Call) {
-                            return <Icon name='call' size={20} color='white' />;
+                            return <Icon name='phone-forwarded' size={20} color='white' />;
                         } else {
                             return <Icon name='camera-alt' size={20} color='white' />;
                         }
@@ -115,8 +115,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 8,
-    backgroundColor: "#075e54",
-    color: "#ffffff",
+
   },
   rightHeaderContainer: {
     flexDirection: "row",
