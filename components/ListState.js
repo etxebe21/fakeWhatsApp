@@ -2,21 +2,12 @@ import React, {Component} from 'react';
 import { StyleSheet, View, Text, Image } from "react-native";
 
 export default class ListState extends Component {
-   
-    
-    //   renderStateHeader() {
-        
-    //       return (
-    //         <View style={styles.stateContainer}>
-    //           <Text style={styles.stateText}>Mi estado</Text>
-    //         </View>
-    //       );
-    //     }
         
     render() {
+        const recentState = this.props.first_name === 'Recientes';
         return (
             
-            <View style = {styles.listItemContainer}>
+            <View style = {[styles.listItemContainer, recentState ? styles.recentContainer : null]}>
                 <View style = {styles.avatarContainer}>
                     <Image 
                         style = {styles.avatar}
@@ -25,9 +16,11 @@ export default class ListState extends Component {
                 </View>
 
             <View style = {styles.chatDetailsContainer}>
-                <View style = {styles.chatDetailsContainerWrap}>
+                <View style = {[styles.chatDetailsContainerWrap, recentState ? styles.recentContainer : null]}>
                     <View style = {styles.nameContainer}>
-                            <Text style = {styles.nameText}>{this.props.first_name}</Text>
+                    <Text style={[styles.nameText, recentState ? styles.recentWord : null]}>
+                                {this.props.first_name}
+                            </Text>
                         </View>
                     </View>
                 <View style = {styles.chatDetailsContainerWrap}>
@@ -90,6 +83,14 @@ const styles = StyleSheet.create ({
         borderRadius: 30,
         width: 60,
         height: 60
-    }
-
+    },
+    recentContainer: {
+        backgroundColor: '#fdf5e6', 
+        width: '100%', 
+        padding: 10, 
+        height: 20,
+        borderBottomColor: '#fdf5e6', 
+        borderBottomWidth: 10
+    },
+  
 });
