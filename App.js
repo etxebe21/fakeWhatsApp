@@ -85,7 +85,8 @@ setListType(type) {
                    buttonColor= '#25D366' 
                     hideShadow={true}
                     useNativeFeedback={false}
-                    icon={(() => {
+                    renderIcon={((active) => {
+                      if(active === false)
                         if (this.state.listType === Chat) {
                             return <Icon name='message' size={20} color='white' />;
                         } else if (this.state.listType === Call) {
@@ -93,7 +94,7 @@ setListType(type) {
                         } else {
                             return <Icon name='camera-alt' size={20} color='white' />;
                         }
-                    })()}
+                    })}
                     style={styles.actionButtonIcon}/>
             </View>           
         )
